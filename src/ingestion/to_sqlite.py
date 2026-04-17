@@ -18,3 +18,5 @@ def save_to_sqlite(df, db_path, file_path):
     conn.close()
 
     print("Table created -> ", table_name)
+
+    return table_name

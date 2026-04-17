@@ -1,23 +1,23 @@
+import os
+
 from src.ingestion.file_loader import load_file
 from src.ingestion.cleaner import clean_columns
 from src.ingestion.to_sqlite import save_to_sqlite
-import sqlite3
 
-# step 1 -> load file
-df = load_file("data/sample.csv")
+DATA_FOLDER = "data"
 
-# step 2 -> clean columns
-df = clean_columns(df)
+# Detect all CSV and Excel files
+files = [
+    os.path.join(DATA_FOLDER, f)
+    for f in os.listdir(DATA_FOLDER)
+    if f.endswith(".csv") or f.endswith(".xlsx")
+]
 
-# step 3 -> save to sqlite
-save_to_sqlite(df, "data/data.db", "data/sample.csv")
-
-# step 4 -> verify 
-conn = sqlite3.connect("data/data.db")
-cursor = conn.cursor()
-
-cursor.execute("SELECT * FROM sales LIMIT 5")
-rows = cursor.fetchall()
-conn.close()
-
-print(rows)
+for file_path in files:
+    print(f"\nProcessing file: {file_path}")
+    
+    df = load_file(file_path)
+    df = clean_columns(df)
+    table_name = save_to_sqlite(df, "data/data.db", file_path)
+    
+    print(f"Loaded → table: {table_name}")

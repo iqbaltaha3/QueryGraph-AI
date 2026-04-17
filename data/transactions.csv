@@ -1,0 +1,6 @@
+transaction_id,order_id,amount,payment_method
+1,1,70000,Card
+2,2,60000,UPI
+3,3,2000,Cash
+4,4,5000,Card
+5,5,4500,UPI
