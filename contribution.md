@@ -1,9 +1,3 @@
-:::writing{variant=“standard” id=“91823”}
-
-CONTRIBUTING.md — QueryGraph AI
-
-⸻
-
 🤝 Why This Project Exists
 
 Tools like Databricks and Snowflake are powerful—but they are also:
@@ -45,8 +39,6 @@ It is designed to be:
 🔄 Project Status
 
 This project is actively evolving.
-
-It is not production-ready, and that’s intentional.
 
 There are known limitations, and improving them is part of the goal.
 
@@ -182,10 +174,6 @@ This project is open by design.
 
 It will improve through contributions, experiments, and shared ideas
 
-
-⸻
-
-If you have an idea—even a small one—feel free to contribute.
 
 ⸻
 
