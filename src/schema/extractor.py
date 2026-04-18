@@ -22,7 +22,8 @@ def get_schema(db_path: str):
                 "name":col[1],
                 "type":col[2]
             } 
-            for col in columns_info]
+            for col in columns_info
+        ]
 
         schema[table_name] = columns
 
